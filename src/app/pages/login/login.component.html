@@ -1,0 +1,74 @@
+
+<div class="ui middle aligned grid">
+  <div class="column centered" >
+    <div class="ui card">
+        
+        <div class="image">
+          <img src="../../../assets/images/eesast.png">
+        </div>
+    
+        <div class="content pupple">
+          <div class="form">
+              <form novalidate class="ui form loginform" [formGroup]="loginForm" (ngSubmit)="loginSubmit()" style="padding: 10px">
+                  
+              <div class="field">
+                <div class="ui input labeled" [ngClass]="{error: loginForm.controls['username'].dirty && !(loginForm.controls['username'].valid)}">
+                  <div class="ui label">用户名:</div>
+                  <input type="text" id="username" placeholder="EEer" formControlName="username">
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="ui input labeled" [ngClass]="{error: loginForm.controls['password'].dirty && !(loginForm.controls['password'].valid)}">
+                  <div class="ui label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码: </div>
+                  <input type="text" id="password" formControlName="password">
+                </div>
+              </div>
+                
+                <button class="ui button fluid" type="submit">Submit</button>
+                  
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
+<div class="ui middle aligned grid" style="background: red">
+    <div class="column centered" style="background:green">
+      <h2 class="ui teal image header">
+        <img src="assets/images/logo.png" class="image">
+        <div class="content">
+          Log-in to your account
+        </div>
+      </h2>
+      <form class="ui large form">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="email" placeholder="E-mail address">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="ui fluid large teal submit button">Login</div>
+        </div>
+  
+        <div class="ui error message"></div>
+  
+      </form>
+  
+      <div class="ui message">
+        New to us? <a href="#">Sign Up</a>
+      </div>
+    </div>
+</div>
+
+-->

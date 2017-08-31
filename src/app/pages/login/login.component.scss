@@ -1,0 +1,32 @@
+/*
+.pagecontent {
+    //width: 80%;
+    height: 100%;
+//    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+*/
+
+
+.grid {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../../assets/images/background2.png);
+  background-position:center;
+  background-attachment: local;
+  background-repeat: no-repeat;    
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto;
+}
+.column {
+  max-width: 450px;
+}
+
+

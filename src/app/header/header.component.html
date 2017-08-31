@@ -1,0 +1,103 @@
+<div class="ui menu fixed inverted stackable">
+  <a class="item" [routerLink]="['main']"><span class="fa fa-home fa-lg"></span>Home</a>
+  <a class="item" [routerLink]="['competition']"><span class="fa fa-trophy fa-lg"></span>Competition</a>
+  <a class="item" [routerLink]="['lecture']"><span class="fa fa-book fa-lg"></span>Lecture</a>
+  <a class="item" [routerLink]="['tool']"><span class="fa fa-cog fa-lg"></span>Tool</a>
+  <a class="ui item" [routerLink]="['article']"><span class="fa fa-newspaper-o fa-lg"></span>Article</a>
+  <a class="item right" [routerLink]="['login']" *ngIf="!islogin"><span class="fa fa-sign-in fa-lg"></span>Login</a>
+  <a class="item" [routerLink]="['register']" *ngIf="!islogin"><span class="fa fa-user-plus fa-lg"></span>Register</a>
+  <a class="item" *ngIf="islogin" [ngClass]="{right: islogin}">{{ currentUser.username }}</a>
+</div>
+
+<!--
+<lsu-modal [(ngModel)]="registerActive" [options]="registerFormOption">
+    <div class="ui menu">
+      <a class="ui item">Register</a>
+      <a class="ui item right"><span class="fa fa-close fa-large" (click)="closeRegister()"></span></a>
+    </div>
+    <div>
+        {{ registerForm.status|json }}
+        {{ registerForm.controls['username'].dirty }}
+        {{ (registerForm.controls['username'].valid) }}
+        {{ registerFormErrors.username }}
+      </div>  
+    <div>
+      <form novalidate class="ui form" [formGroup]="registerForm" (ngSubmit)="registerSubmit()" style="padding: 20px">
+  
+        <div class="field" [ngClass]="{error: registerForm.controls['username'].dirty && !(registerForm.controls['username'].valid)}">
+          <label for="username">用户名:</label>
+          <input type="text" id="username" placeholder="EEer" formControlName="username">
+        </div>
+
+        <div class="ui red message" *ngIf="registerFormErrors.username">
+            <div class="header">这一字段出现了一些错误 </div>
+            <ul class="list">
+              {{ registerFormErrors.username }}
+            </ul>
+        </div>
+
+        <div class="field" [ngClass]="{error: registerForm.controls['password'].dirty && !(registerForm.controls['password'].valid)}">
+          <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+          <input type="text" id="password" formControlName="password">
+        </div>
+
+        <div class="ui red message" *ngIf="registerFormErrors.password">
+            <div class="header">这一字段出现了一些错误 </div>
+            <ul class="list">
+              {{ registerFormErrors.password }}
+            </ul>
+        </div>
+
+        <div class="field" [ngClass]="{error: registerForm.controls['password2'].dirty && !(registerForm.controls['password2'].valid)}">
+          <label for="password2">重复密码:</label>
+          <input type="text" id="password2" formControlName="password2">
+        </div>
+
+        <div class="ui red message" *ngIf="registerFormErrors.password2">
+            <div class="header">这一字段出现了一些错误 </div>
+            <ul class="list">
+              {{ registerFormErrors.password2 }}
+            </ul>
+        </div>
+
+        <div class="field" [ngClass]="{error: registerForm.controls['email'].dirty && !(registerForm.controls['email'].valid)}">
+          <label for="email">邮箱:</label>
+          <input type="text" id="email" formControlName="email">
+        </div>
+        
+        <div class="ui red message" *ngIf="registerFormErrors.email">
+            <div class="header">这一字段出现了一些错误 </div>
+            <ul class="list">
+              {{ registerFormErrors.email }}
+            </ul>
+        </div>
+
+        <div class="field" [ngClass]="{error: registerForm.controls['studentID'].dirty && !(registerForm.controls['studentID'].valid)}">
+            <label for="studentID">学生证号</label>
+            <input type="text" id="studentID" formControlName="studentID">
+        </div>
+  
+        <div class="ui red message" *ngIf="registerFormErrors.studentID">
+              <div class="header">这一字段出现了一些错误 </div>
+              <ul class="list">
+                {{ registerFormErrors.studentID }}
+              </ul>
+        </div>
+
+        <div class="field" [ngClass]="{error: registerForm.controls['realname'].dirty && !(registerForm.controls['realname'].valid)}">
+            <label for="realname">真实姓名:</label>
+            <input type="text" id="realname" formControlName="realname">
+        </div>
+          
+        <div class="ui red message" *ngIf="registerFormErrors.realname">
+            <div class="header">这一字段出现了一些错误 </div>
+            <ul class="list">
+              {{ registerFormErrors.realname }}
+            </ul>
+        </div>
+
+        <button class="ui button" type="submit">Submit</button>
+  
+      </form>
+    </div>
+</lsu-modal> -->

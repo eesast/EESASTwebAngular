@@ -1,0 +1,167 @@
+
+<div class="ui inverted vertical footer segment">
+  
+  <div class="ui center aligned container">
+    <div class="ui stackable inverted divided grid">
+      <div class="three wide column">
+        <h3 class="ui inverted header">电子科协</h3>
+        <div class="ui inverted link list">
+          <a href="#" class="item">历史沿革</a>
+          <a href="#" class="item">组织结构</a>        
+          <a href="#" class="item">SAST Daily</a>                    
+        </div>
+      </div>
+      <div class="three wide column">
+          <h3 class="ui inverted header">科协赛事</h3>
+          <div class="ui inverted link list">
+              <a href="#" class="item">电子设计大赛</a>
+              <a href="#" class="item">硬件设计大赛</a>  
+              <a href="#" class="item">队式程序设计大赛</a>        
+              <a href="#" class="item">ADI杯新生知识竞赛</a>                    
+          </div>
+        </div>
+      <div class="three wide column">
+        <h3 class="ui inverted header">联系方式</h3>
+        <div class="ui inverted link horizontal list">
+          <a href="https://www.github.com/eesast/" target="blank" class="ui item image"><img class="ui mini image" src="../../assets/images/logo/github-logo.svg"></a>
+          <a href="mailto:eesast@mail.tsinghua.edu.cn" class="ui item image" lsu-popup [trigger]="'hover'" [content]="'eesast@mail.tsinghua.edu.cn'">
+            <img class="ui mini image" src="../../assets/images/logo/black-envelope.svg"></a>
+        </div>
+      </div>
+      <div class="seven wide column">
+        <h3 class="ui inverted header">公众号们</h3>
+        <div class="ui inverted link horizontal list">
+          <div class="item">
+            <h4>清华队式</h4>
+            <img class="ui tiny image" src="../../assets/images/TS-small.jpg" (click) = "TSshow()">
+          </div>
+          <div class="item">
+            <h4>清华电设</h4>
+            <img class="ui tiny image" src="../../assets/images/EDC-small.jpg">
+          </div>
+
+          <div class="item">
+            <h4>无限之声</h4>
+            <img class="ui tiny image" src="../../assets/images/TS-small.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui inverted section divider"></div>
+
+    <img src="../../assets/images/logo.png" class="ui centered tiny image">
+    <div class="ui horizontal inverted small divided link list">
+      <a class="item" href="#">联系我们</a>
+      <a class="item" href="#">更新日志</a>
+      <a class="item" href="#">关于我们</a>
+      <a class="item" href="">开发团队</a>
+    </div>
+  </div>
+</div>
+
+<lsu-modal [(ngModel)]="TSQRshow" [options]="QROptions">
+    <i class="close icon" (click)="TSclose()"></i>
+    <div class="header">
+      清华队式
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+          <img src="../../assets/images/TS-small.jpg">
+        </div>
+        <div class="description">
+          <div class="ui header">清华大学电子工程系队式比赛公众号</div>
+            <div class="ui list bulleted">
+              <div class="item">由电子科协软件部组织、开发、举办的程序设计竞赛</div>
+              <div class="item">使用简单的C/C++语言构造精巧的AI与对手竞技, 使用算法和策略取得胜利</div>
+            </div>
+        </div>
+    </div>
+  </lsu-modal>
+
+
+
+
+
+<!--
+<div class="ui vertical footer segment">
+  
+  <div class="ui center aligned container">
+    <div class="ui stackable divided grid">
+      <div class="three wide column">
+        <h3 class="ui header">电子科协</h3>
+        <div class="ui link list">
+          <a href="#" class="item">历史沿革</a>
+          <a href="#" class="item">组织结构</a>        
+          <a href="#" class="item">SAST Daily</a>                    
+        </div>
+      </div>
+      <div class="three wide column">
+          <h3 class="ui header">科协赛事</h3>
+          <div class="ui link list">
+              <a href="#" class="item">电子设计大赛</a>
+              <a href="#" class="item">硬件设计大赛</a>  
+              <a href="#" class="item">队式程序设计大赛</a>        
+              <a href="#" class="item">ADI杯新生知识竞赛</a>                    
+          </div>
+        </div>
+      <div class="three wide column">
+        <h3 class="ui header">联系方式</h3>
+        <div class="ui link horizontal list">
+          <a href="https://www.github.com/eesast/" target="blank" class="ui item image"><img class="ui mini image" src="../../assets/images/logo/github-logo.svg"></a>
+          <a href="mailto:eesast@mail.tsinghua.edu.cn" class="ui item image" lsu-popup [trigger]="'hover'" [content]="'eesast@mail.tsinghua.edu.cn'">
+            <img class="ui mini image" src="../../assets/images/logo/black-envelope.svg"></a>
+        </div>
+      </div>
+      <div class="seven wide column">
+        <h3 class="ui header">公众号们</h3>
+        <div class="ui link horizontal list">
+          <div class="item">
+            <h4>清华队式</h4>
+            <img class="ui tiny image" src="../../assets/images/TS-small.jpg" (click) = "TSshow()">
+          </div>
+          <div class="item">
+            <h4>清华电设</h4>
+            <img class="ui tiny image" src="../../assets/images/EDC-small.jpg">
+          </div>
+
+          <div class="item">
+            <h4>无限之声</h4>
+            <img class="ui tiny image" src="../../assets/images/TS-small.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui section divider"></div>
+
+    <img src="../../assets/images/logo.png" class="ui centered tiny image">
+    <div class="ui horizontal small divided link list">
+      <a class="item" href="#">联系我们</a>
+      <a class="item" href="#">更新日志</a>
+      <a class="item" href="#">关于我们</a>
+      <a class="item" href="">开发团队</a>
+    </div>
+  </div>
+</div>
+
+<lsu-modal [(ngModel)]="TSQRshow" [options]="QROptions">
+    <i class="close icon" (click)="TSclose()"></i>
+    <div class="header">
+      清华队式
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+          <img src="../../assets/images/TS-small.jpg">
+        </div>
+        <div class="description">
+          <div class="ui header">清华大学电子工程系队式比赛公众号</div>
+            <div class="ui list bulleted">
+              <div class="item">由电子科协软件部组织、开发、举办的程序设计竞赛</div>
+              <div class="item">使用简单的C/C++语言构造精巧的AI与对手竞技, 使用算法和策略取得胜利</div>
+            </div>
+        </div>
+    </div>
+  </lsu-modal>
+
+-->
