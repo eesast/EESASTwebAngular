@@ -25,6 +25,7 @@ import { CompetitionComponent } from './pages/competition/competition.component'
 
 // import service
 import { UserService } from './user/services/user.service';
+import { ClassroomService } from './pages/tools/classroom/classroom.service';
 
 // import responsive form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -42,6 +43,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CookieModule } from 'ngx-cookie';
 import { ClassroomComponent } from './pages/tools/classroom/classroom.component';
 
+import * as _ from 'underscore';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { ClassroomComponent } from './pages/tools/classroom/classroom.component'
   providers: [
     UserService,
     ProcessHttpmsgService,    
+    ClassroomService,
     {provide: 'baseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent],

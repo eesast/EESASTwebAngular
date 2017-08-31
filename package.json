@@ -24,7 +24,6 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
-    "angular2-cookie": "^1.2.6",
     "angular2-semantic-ui": "^2.0.8",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -35,6 +34,7 @@
     "rxjs": "^5.4.2",
     "semantic": "0.0.1",
     "semantic-ui": "^2.2.13",
+    "underscore": "^1.8.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

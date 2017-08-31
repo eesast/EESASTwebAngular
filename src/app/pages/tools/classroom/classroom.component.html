@@ -1,6 +1,76 @@
 <div class="ui container">
-  <div class="ui grid">
-    <ui class="form">
-      
+  <div class="form">
+    <form [formGroup]="queryForm" class="ui form" (ngSubmit)="submitSearch(queryForm.value)">
+      <div class="ui message green">
+        <div class="header"> 你需要知道的一些事情</div>
+        <ul class="ui list">
+          <li>数据来自info</li>
+          <li>来自info的数据可能是过时的</li>
+          <li>起始和终结以大课为单位</li>
+        </ul>            
+      </div>
+    <div class="ui segments">
+      <div class="segment">
+        <div class="field">
+          <p><strong>教学楼</strong></p>              
+          <sui-multi-select class="selection" [(ngModel)]="selectedOptions"
+            [options]="buildingOptions"
+            labelField="building"
+            [isSearchable]="true"
+            formControlName="building"
+            #select>
+              <sui-select-option *ngFor="let o of select.filteredOptions" [value]="o"></sui-select-option>
+          </sui-multi-select>
+        </div>
+      </div>
+      <div class="ui segment">
+          
+        <div class="four fields">
+            <div class="field">
+              <p><strong>周次</strong></p>
+              <sui-select placeholder="week" formControlName="week"> 
+                  <sui-select-option *ngFor="let i of weeks" [value]="i"></sui-select-option>
+              </sui-select>
+            </div>
+
+            <div class="field">
+                <p><strong>星期</strong></p>
+                <sui-select placeholder="day" formControlName="day">
+                    <sui-select-option *ngFor="let i of days" [value]="i"></sui-select-option>
+                </sui-select>
+            </div>
+
+            <div class="field">
+                <p><strong>起始</strong></p>
+                <sui-select placeholder="start" formControlName="start">
+                    <sui-select-option *ngFor="let i of starts" [value]="i"></sui-select-option>
+                </sui-select>
+            </div>
+            <div class="field">
+                <p><strong>结束</strong></p>
+                <sui-select placeholder="end" formControlName="end">
+                    <sui-select-option *ngFor="let i of ends" [value]="i"></sui-select-option>
+                </sui-select>
+            </div>                          
+          </div>
+        </div>
+
+        <div class="ui segment">
+          <button class="ui button primary" type="submit">查询</button>
+          <button class="ui button primary" (click)="clear()">清空</button>          
+        </div>
+      </div>
+      <div class="ui icon message" *ngIf="submitting">
+          <i class="notched circle loading icon"></i>
+          <div class="content">
+            <div class="header">稍候 </div>
+            <p>我们正在为您获取内容。</p>
+          </div>
+        </div>
+    </form>
+  </div>
+
+  <div>
+    {{ classroomList|json }}
   </div>
 </div>
