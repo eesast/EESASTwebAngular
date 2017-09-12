@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../user/services/user.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,59 +9,56 @@ import { Router } from "@angular/router";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  
   registerForm: FormGroup;
-  
   registerFormErrors = {
-    'username':'',
-    'password':'',
-    'password2':'',
-    'email':'',
-    'studentID':'',
-    'realname':''
-  }
+    'username': '',
+    'password': '',
+    'password2': '',
+    'email': '',
+    'studentID': '',
+    'realname': ''
+  };
 
   registerValidationMessages = {
-    'username':{  
-      'required':'需要键入一个用户名'
+    'username': {
+      'required': '需要键入一个用户名'
     },
-    'password':{
-      'required':'需要键入密码'
+    'password': {
+      'required': '需要键入密码'
     },
-    'password2':{
-      'required':'需要将密码重复一遍'
+    'password2': {
+      'required': '需要将密码重复一遍'
     },
-    'email':{
-      'required':'需要电子邮件'
+    'email': {
+      'required': '需要电子邮件'
     },
-    'studentID':{
-      'required':'需要学生证号'
+    'studentID': {
+      'required': '需要学生证号'
     },
-    'realname':{
-      'required':'需要真实姓名'
+    'realname': {
+      'required': '需要真实姓名'
     }
-  }
-  
+  };
 
   constructor(private fb: FormBuilder,
-              private userService:UserService,
+              private userService: UserService,
               @Inject('baseURL') private baseURL,
-              private router: Router) { 
+              private router: Router) {
     this.createRegisterForm();
   }
 
   ngOnInit() {
   }
 
-  createRegisterForm(){
+  createRegisterForm() {
     this.registerForm = this.fb.group(
       {
-        'username':['', [Validators.required] ],
-        'password':['', [Validators.required] ],
+        'username': ['', [Validators.required] ],
+        'password': ['', [Validators.required] ],
         'password2': ['', [Validators.required] ],
-        'studentID':['', [Validators.required] ],
-        'email':['', [Validators.required] ],
-        'realname':['', [Validators.required] ]
+        'studentID': ['', [Validators.required] ],
+        'email': ['', [Validators.required] ],
+        'realname': ['', [Validators.required] ]
       }
     );
 
@@ -70,11 +67,12 @@ export class RegisterComponent implements OnInit {
     this.onValueChanged();
   }
 
-  onValueChanged(data? :any){
-    console.log("value changed!");
-    if(! this.registerForm) { return; }
+  onValueChanged(data?: any) {
+    console.log('value changed!');
+    if (!this.registerForm) { return; }
     const form = this.registerForm;
-    for (const field in this.registerFormErrors){
+    /*
+    for ( const field in this.registerFormErrors ){
       this.registerFormErrors[field] = '';
       const control = form.get(field);
       if (control && control.dirty && !control.valid){
@@ -84,17 +82,33 @@ export class RegisterComponent implements OnInit {
         }
       }
     }
+    */
+    for ( const field in this.registerFormErrors ) {
+      if (this.registerFormErrors.hasOwnProperty(field)) {
+        this.registerFormErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.registerValidationMessages[field];
+          for (const key in control.errors) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.registerFormErrors[field] += messages[key] + ' ';
+            }
+          }
+        }
+      }
+    }
+
     console.log(this.registerFormErrors);
   }
 
-  registerSubmit(){
-    let registerInfo = this.registerForm.value;
-    this.userService.RegisterObservable(registerInfo).subscribe(
-      res => {
-        if (res){
-          this.router.navigate(['main'])
-        }
-      }
-    )
+  registerSubmit() {
+    const registerInfo = this.registerForm.value;
+    this.userService.isRegister().subscribe(res => {
+      console.log(res);
+      this.router.navigate(['main']);
+    }, err => {
+      console.log(err);
+    });
+    this.userService.Register(registerInfo);
   }
 }

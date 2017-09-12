@@ -1,9 +1,9 @@
 <div class="ui menu inverted stackable">
   <a class="item" [routerLink]="['main']"><span class="fa fa-home fa-lg"></span>Home</a>
   <a class="item" [routerLink]="['competition']"><span class="fa fa-trophy fa-lg"></span>Competition</a>
-  <a class="item" [routerLink]="['lecture']"><span class="fa fa-book fa-lg"></span>Lecture</a>
   <a class="item" [routerLink]="['tool']"><span class="fa fa-cog fa-lg"></span>Tool</a>
   <a class="ui item" [routerLink]="['article']"><span class="fa fa-newspaper-o fa-lg"></span>Article</a>
+  <a class="ui item" [routerLink]="['article']"><span class="fa fa-newspaper-o fa-lg"></span>Report BUG</a>
   <a class="item right" [routerLink]="['login']" *ngIf="!islogin"><span class="fa fa-sign-in fa-lg"></span>Login</a>
   <a class="item" [routerLink]="['register']" *ngIf="!islogin"><span class="fa fa-user-plus fa-lg"></span>Register</a>
   <a class="item" *ngIf="islogin" [ngClass]="{right: islogin}">{{ currentUser.username }}</a>
@@ -20,10 +20,10 @@
         {{ registerForm.controls['username'].dirty }}
         {{ (registerForm.controls['username'].valid) }}
         {{ registerFormErrors.username }}
-      </div>  
+      </div>
     <div>
       <form novalidate class="ui form" [formGroup]="registerForm" (ngSubmit)="registerSubmit()" style="padding: 20px">
-  
+
         <div class="field" [ngClass]="{error: registerForm.controls['username'].dirty && !(registerForm.controls['username'].valid)}">
           <label for="username">用户名:</label>
           <input type="text" id="username" placeholder="EEer" formControlName="username">
@@ -64,7 +64,7 @@
           <label for="email">邮箱:</label>
           <input type="text" id="email" formControlName="email">
         </div>
-        
+
         <div class="ui red message" *ngIf="registerFormErrors.email">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
@@ -76,7 +76,7 @@
             <label for="studentID">学生证号</label>
             <input type="text" id="studentID" formControlName="studentID">
         </div>
-  
+
         <div class="ui red message" *ngIf="registerFormErrors.studentID">
               <div class="header">这一字段出现了一些错误 </div>
               <ul class="list">
@@ -88,7 +88,7 @@
             <label for="realname">真实姓名:</label>
             <input type="text" id="realname" formControlName="realname">
         </div>
-          
+
         <div class="ui red message" *ngIf="registerFormErrors.realname">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
@@ -97,7 +97,7 @@
         </div>
 
         <button class="ui button" type="submit">Submit</button>
-  
+
       </form>
     </div>
 </lsu-modal> -->

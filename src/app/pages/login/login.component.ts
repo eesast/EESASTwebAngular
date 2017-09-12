@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   submitting: boolean;
   loginErr: boolean;
 
-  constructor(private fb: FormBuilder, 
-              private userService:UserService,
+  constructor(private fb: FormBuilder,
+              private userService: UserService,
               private router: Router,
               @Inject('baseURL') private baseURL) {
     this.submitting = false;
@@ -35,20 +35,18 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  loginSubmit(){
+  loginSubmit() {
     this.submitting = true;
     this.userService.islogin.subscribe(res => {
-      if (res){
+      if (res) {
         this.submitting = false;
         this.router.navigate(['main']);
       }
-      else{
+      else {
         this.submitting = false;
         this.loginErr = true;
       }
     });
     this.userService.Login(this.loginForm.value);
   }
-
-
 }

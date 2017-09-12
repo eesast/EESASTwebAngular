@@ -1,4 +1,4 @@
-// import core 
+// import core
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +12,7 @@ import { SuiModule } from 'ng2-semantic-ui';
 
 import 'hammerjs';
 
-// import component 
+// import component
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,6 +21,7 @@ import { MainComponent } from './pages/main/main.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ToolsComponent } from './pages/tools/tools.component';
 import { CompetitionComponent } from './pages/competition/competition.component';
+import { DepartmentComponent } from './pages/department/department.component';
 
 
 // import service
@@ -55,7 +56,8 @@ import * as _ from 'underscore';
     RegisterComponent,
     ToolsComponent,
     CompetitionComponent,
-    ClassroomComponent
+    ClassroomComponent,
+    DepartmentComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,7 @@ import * as _ from 'underscore';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,    
+    HttpClientModule,
     AppRoutingModule,
     SuiModule,
     CookieModule.forRoot(),
@@ -72,12 +74,12 @@ import * as _ from 'underscore';
   ],
   providers: [
     UserService,
-    ProcessHttpmsgService,    
+    ProcessHttpmsgService,
     ClassroomService,
     {provide: 'baseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent],
-  entryComponents:[
+  entryComponents: [
     LoginComponent
   ]
 })

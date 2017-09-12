@@ -1,4 +1,17 @@
-.container{
-    height: auto;
-    min-height: 80%;
+
+.mainpicture{
+  margin: 0;
+  padding: 0;
+  min-height: 80%;
+  width: 100%;
+  background-image: url(../../../assets/images/circuit.jpg);
+  background-position:center;
+  background-attachment: local;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.description{
+  align-self:flex-end;
+  margin: 2% auto;
 }

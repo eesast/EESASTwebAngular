@@ -1,4 +1,4 @@
-<div class="ui middle aligned grid">
+<div class="ui middle aligned stackable grid">
   <div class="four wide column inverted register" >
     <div class="ui message green">
         <div class="header">一些说明 </div>
@@ -6,72 +6,72 @@
     </div>
     <div class="ui card">
       <form novalidate class="ui form" [formGroup]="registerForm" (ngSubmit)="registerSubmit()" style="padding: 20px">
-          
+
         <div class="field" [ngClass]="{error: registerForm.controls['username'].dirty && !(registerForm.controls['username'].valid)}">
           <label for="username">用户名:</label>
           <input type="text" id="username" placeholder="EEer" formControlName="username">
         </div>
-      
+
         <div class="ui red message" *ngIf="registerFormErrors.username">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
               {{ registerFormErrors.username }}
             </ul>
         </div>
-      
+
         <div class="field" [ngClass]="{error: registerForm.controls['password'].dirty && !(registerForm.controls['password'].valid)}">
           <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
-          <input type="text" id="password" formControlName="password">
+          <input type="password" id="password" formControlName="password">
         </div>
-      
+
         <div class="ui red message" *ngIf="registerFormErrors.password">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
               {{ registerFormErrors.password }}
             </ul>
         </div>
-      
+
         <div class="field" [ngClass]="{error: registerForm.controls['password2'].dirty && !(registerForm.controls['password2'].valid)}">
           <label for="password2">重复密码:</label>
-          <input type="text" id="password2" formControlName="password2">
+          <input type="password" id="password2" formControlName="password2">
         </div>
-      
+
         <div class="ui red message" *ngIf="registerFormErrors.password2">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
               {{ registerFormErrors.password2 }}
             </ul>
         </div>
-      
+
         <div class="field" [ngClass]="{error: registerForm.controls['email'].dirty && !(registerForm.controls['email'].valid)}">
           <label for="email">邮箱:</label>
           <input type="text" id="email" formControlName="email">
         </div>
-        
+
         <div class="ui red message" *ngIf="registerFormErrors.email">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">
               {{ registerFormErrors.email }}
             </ul>
         </div>
-      
+
         <div class="field" [ngClass]="{error: registerForm.controls['studentID'].dirty && !(registerForm.controls['studentID'].valid)}">
             <label for="studentID">学生证号:</label>
             <input type="text" id="studentID" formControlName="studentID">
         </div>
-      
+
         <div class="ui red message" *ngIf="registerFormErrors.studentID">
               <div class="header">这一字段出现了一些错误 </div>
               <ul class="list">
                 {{ registerFormErrors.studentID }}
               </ul>
         </div>
-      
+
         <div class="field" [ngClass]="{error: registerForm.controls['realname'].dirty && !(registerForm.controls['realname'].valid)}">
             <label for="realname">真实姓名:</label>
             <input type="text" id="realname" formControlName="realname">
         </div>
-          
+
         <div class="ui red message" *ngIf="registerFormErrors.realname">
             <div class="header">这一字段出现了一些错误 </div>
             <ul class="list">

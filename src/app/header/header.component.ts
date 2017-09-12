@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   currentUser: User;
   islogin: boolean;
 
-  constructor(private userService:UserService, @Inject('baseURL') private baseURL) { 
+  constructor(private userService: UserService, @Inject('baseURL') private baseURL) {
 
   }
 

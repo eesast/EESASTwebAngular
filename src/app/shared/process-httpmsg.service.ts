@@ -10,7 +10,7 @@ export class ProcessHttpmsgService {
   constructor() { }
 
   public extractData(res: Response){
-    let body = res.json();
+    const body = res.json();
     console.log(body);
     return body || {};
   }
