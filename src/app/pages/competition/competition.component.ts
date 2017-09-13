@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./competition.component.scss']
 })
 export class CompetitionComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
